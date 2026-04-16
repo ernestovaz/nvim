@@ -13,9 +13,7 @@ return {
       -- neodev must be set up before lspconfig so lua_ls picks up neovim types
       require('neodev').setup()
 
-      -----------------------------------------------------------
       -- on_attach: keymaps that only activate when an LSP is connected
-      -----------------------------------------------------------
       local on_attach = function(_, bufnr)
         local nmap = function(keys, func, desc)
           if desc then
@@ -56,9 +54,7 @@ return {
         end, { desc = 'format current buffer with LSP' })
       end
 
-      -----------------------------------------------------------
       -- servers: add entries here to auto-install via mason
-      -----------------------------------------------------------
       local servers = {
         -- clangd = {},
         -- gopls = {},
@@ -73,10 +69,7 @@ return {
         },
       }
 
-      -----------------------------------------------------------
       -- capabilities & mason: wire everything together
-      -----------------------------------------------------------
-      -- broadcast nvim-cmp's additional completion capabilities to all servers
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
