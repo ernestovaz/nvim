@@ -40,6 +40,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
+-- use backspace to alternate between last file and current file
+vim.keymap.set("n", "<BS>", "<C-^>")
+
 -- open netrw file explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 

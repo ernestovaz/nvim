@@ -38,8 +38,8 @@ return {
         nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'workspace symbols')
 
         -- documentation
-        nmap('<C-m>', vim.lsp.buf.hover, 'hover documentation')
-        nmap('<C-S-S>', vim.lsp.buf.signature_help, 'signature documentation')
+        nmap('K', vim.lsp.buf.hover, 'hover documentation')
+        nmap('gK', vim.lsp.buf.signature_help, 'signature documentation')
 
         -- workspace management
         nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'workspace add folder')

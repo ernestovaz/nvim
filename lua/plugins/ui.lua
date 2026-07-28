@@ -74,7 +74,18 @@ return {
     -- popup showing available keybindings as you type
     'folke/which-key.nvim',
     opts = {
-      delay = 2000,
+      delay = 500,
+      preset = false,
+      win = {
+        width = { min = 30, max = 60 },
+        height = { min = 4, max = 0.9 },
+        col = -1,
+        row = -1,
+        border = "rounded",
+        padding = { 1, 2 },
+        title = true,
+        title_pos = "center",
+      },
     },
   },
 
@@ -87,4 +98,16 @@ return {
       },
     },
   },
+  { 'rcarriga/nvim-notify',
+    config = function ()
+      require("notify").setup {
+        background_colour = 'FloatShadow',
+        timeout = 3000,
+      }
+      vim.notify = require('notify')
+    end
+  },
+  {
+    'hiphish/rainbow-delimiters.nvim'
+  }
 }

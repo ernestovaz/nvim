@@ -6,8 +6,8 @@ return {
       lazy = true,
       workspaces = {
         {
-          name = "notes",
-          path = "~/notes",
+          name = "vault",
+          path = "~/vault",
         },
       },
       disable_frontmatter = true,

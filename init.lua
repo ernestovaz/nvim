@@ -14,8 +14,17 @@ if not vim.uv.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-require('lazy').setup('plugins')
+require('lazy').setup({
+  spec = {
+    { import = "plugins" }
+  },
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
+})
 require('config.keybinds')
 require('config.autocmds')
+require('pi').setup()
 
 -- vim: ts=2 sts=2 sw=2 et
