@@ -1,7 +1,11 @@
 return {
   {
     -- obsidian vault integration
-    'obsidian-nvim/obsidian.nvim',
+    "obsidian-nvim/obsidian.nvim",
+    -- only load if vault directory exists
+    cond = function()
+      return vim.fn.isdirectory(vim.fn.expand("~/vault")) == 1
+    end,
     opts = {
       lazy = true,
       workspaces = {
@@ -16,8 +20,8 @@ return {
   },
 
   -- floating terminal window (:FloatermToggle)
-  { 'voldikss/vim-floaterm' },
+  { "voldikss/vim-floaterm" },
 
   -- live markdown preview in browser (:LivedownToggle)
-  { 'shime/vim-livedown' },
+  { "shime/vim-livedown" },
 }
